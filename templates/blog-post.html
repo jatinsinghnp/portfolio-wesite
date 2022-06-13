@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Tunis Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700" rel="stylesheet">
+
+     <!-- Template CSS Files -->
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/preloader.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/circle.css' %}" rel="stylesheet">
+     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/fm.revealator.jquery.min.css' %}" rel="stylesheet">
+     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+ 
+     <!-- CSS Skin File -->
+     <link href="{% static 'css/skins/yellow.css' %}" rel="stylesheet">
+ 
+     <!-- Modernizr JS File -->
+     <script src="{% static 'js/modernizr.custom.js' %}"></script>
+</head>
+
+<body class="blog-post">
+<!-- Header Starts -->
+{% include 'components/nav.html' %}
+<!-- Header Ends -->
+<!-- Page Title Starts -->
+<section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
+    <h1>my <span>blog</span></h1>
+    <span class="title-bg">posts</span>
+</section>
+<!-- Page Title Ends -->
+<!-- Main Content Starts -->
+<section class="main-content revealator-slideup revealator-once revealator-delay1">
+    <div class="container">
+        <div class="row">
+            <!-- Article Starts -->
+            <article class="col-12">
+                <!-- Meta Starts -->
+                <div class="meta open-sans-font">
+                    <span><i class="fa fa-user"></i> {{blog.user.name}}</span>
+                    <span class="date"><i class="fa fa-calendar"></i> {{blog.created_at}}</span>
+                    <span><i class="fa fa-tags"></i>{{blog.tag}}</span>
+                </div>
+                <!-- Meta Ends -->
+                <!-- Article Content Starts -->
+                <h1 class="text-uppercase text-capitalize">{{blog.title}}</h1>
+                <img src="{{blog.image.url}}" class="img-fluid" alt="Blog image"/>
+                <div class="blog-excerpt open-sans-font pb-5">
+                     <p>{{blog.desc|safe }}</p>
+                </div>
+                <!-- Article Content Ends -->
+            </article>
+            <!-- Article Ends -->
+        </div>
+    </div>
+</section>
+<!-- Template JS Files -->
+<script src="{% static 'js/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/preloader.min.js' %}"></script>
+    <script src="{% static 'js/fm.revealator.jquery.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/cbpGridGallery.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverdir.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
