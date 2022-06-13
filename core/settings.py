@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env("SECRET_KEY")
 
-DEBUG=True
+DEBUG=False
 
 ALLOWED_HOSTS = ["jatinsinghportfolio.herokuapp.com",'*']
 
@@ -47,10 +47,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "home",
     "ckeditor",
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
-    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -61,7 +62,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
-
+WHITENOISE_USE_FINDERS = True
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -77,7 +78,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = "core.wsgi.application"
 
 
@@ -144,6 +144,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 django_heroku.settings(locals())
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 # Base url to serve media files
