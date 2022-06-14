@@ -144,7 +144,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 django_heroku.settings(locals())
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 # Base url to serve media files
