@@ -74,7 +74,10 @@
                         </ul>
                     </div>
                     <div class="col-12 mt-3">
-                        <a href="about.html" class="btn btn-download">Download CV</a>
+                        {% for person in persons %}
+
+                        <a href="{{person.cv.url}}" class="btn btn-download">Download CV</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
