@@ -5,7 +5,7 @@ from .views import (
     PortfolioPageView,
     ContactUsView,
     BlogPageView,
-    BlogPostView
+    BlogPostView,
 )
 
 
