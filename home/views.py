@@ -63,7 +63,7 @@ class BlogPageView(ListView):
     model = Blog
     template_name = "blog.html"
     context_object_name = "blogs"
-
+    
 
 class BlogPostView(DetailView):
     model = Blog
