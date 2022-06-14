@@ -19,7 +19,7 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("dashboard/", admin.site.urls),
     path("", include("home.urls")),
     re_path(
         r"^media/(?P<path>.*)$",
