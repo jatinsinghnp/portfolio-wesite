@@ -152,6 +152,8 @@ MEDIA_URL = "/media/"
 # Path where media is stored
 MEDIA_ROOT = BASE_DIR / "media"
 
+
+FORCE_SCRIPT_NAME = '/home'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
